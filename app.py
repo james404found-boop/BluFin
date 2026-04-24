@@ -8,8 +8,8 @@ import requests
 load_dotenv()
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'super_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres.hrbjruqitvtxwponfuii:PLaC8uLUE7qRbtCe@aws-1-ap-south-1.pooler.supabase.com:6543/postgres'
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("SQL_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
