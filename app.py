@@ -419,7 +419,7 @@ def login():
     return send_from_directory('templates', 'login.html')
 
 
-@app.route('/clearsession')
+@app.post('/clearsession')
 def clear_session():
     session.clear()
     return redirect(url_for('login'))
